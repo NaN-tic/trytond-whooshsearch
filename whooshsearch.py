@@ -6,7 +6,7 @@ from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval, PYSONEncoder, Id
-from trytond.config import config
+from trytond.config import CONFIG
 from whoosh import index
 from whoosh.fields import Schema, ID as wID, BOOLEAN as wBOOLEAN, \
     NUMERIC as wNUMERIC, TEXT as wTEXT, DATETIME as wDATETIME
@@ -91,7 +91,7 @@ class WhooshSchema(ModelSQL, ModelView):
     def _remove_schema(schemas):
         for schema in schemas:
             db_name = Transaction().cursor.dbname
-            schema_dir = os.path.join(config.get('database', 'path'),
+            schema_dir = os.path.join(CONFIG['data_path'],
                 db_name, 'whoosh', schema.slug)
             try:
                 shutil.rmtree(schema_dir)
@@ -111,7 +111,7 @@ class WhooshSchema(ModelSQL, ModelView):
         '''
         for schema in schemas:
             db_name = Transaction().cursor.dbname
-            schema_dir = os.path.join(config.get('database', 'path'),
+            schema_dir = os.path.join(CONFIG['data_path'],
                 db_name, 'whoosh', schema.slug)
 
             if not os.path.exists(schema_dir):
@@ -166,7 +166,7 @@ class WhooshSchema(ModelSQL, ModelView):
             logging.getLogger('whoosh').info('Start schema %s' % schema.slug)
 
             db_name = Transaction().cursor.dbname
-            schema_dir = os.path.join(config.get('database', 'path'),
+            schema_dir = os.path.join(CONFIG['data_path'],
                 db_name, 'whoosh', schema.slug)
 
             if not os.path.exists(schema_dir):
@@ -319,7 +319,7 @@ class WhooshSearch(Wizard):
         db_name = Transaction().cursor.dbname
         lang = Transaction().context.get('language').lower()
 
-        schema_dir = os.path.join(config.get('database', 'path'),
+        schema_dir = os.path.join(CONFIG['data_path'],
             db_name, 'whoosh', schema.slug, lang)
 
         if not os.path.exists(schema_dir):
