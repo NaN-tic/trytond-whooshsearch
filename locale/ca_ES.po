@@ -1,0 +1,335 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:whoosh.schema:"
+msgid "The slug of the whoosh schema must be unique."
+msgstr "El slug del Whoosh Esquema ha de ser únic."
+
+msgctxt "error:whoosh.search:"
+msgid "Error domain \"%s\"."
+msgstr "Error domini \"%s\"."
+
+msgctxt "error:whoosh.search:"
+msgid ""
+"Not found parse fields in schema \"%s\". Select one or more parser fields in"
+" schema."
+msgstr ""
+"No hi ha cap camp marcat com \"Parse\" en l'esquema \"%s\". Selecciona un o "
+"més en els camps del esquema."
+
+msgctxt "error:whoosh.search:"
+msgid ""
+"Not found schema \"%s\" - \"%s\". Create Schema and generate index before "
+"searching."
+msgstr ""
+"No s'ha trobat el esquema  \"%s\" - \"%s\". Crea un esquema  i genera la "
+"indexació abans de buscar."
+
+msgctxt "field:whoosh.field,active:"
+msgid "Active"
+msgstr "Actiu"
+
+msgctxt "field:whoosh.field,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:whoosh.field,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:whoosh.field,field:"
+msgid "Field"
+msgstr "Camp"
+
+msgctxt "field:whoosh.field,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:whoosh.field,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.field,parser:"
+msgid "Parser"
+msgstr "Parser"
+
+msgctxt "field:whoosh.field,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.field,schema:"
+msgid "Schema"
+msgstr "Esquema"
+
+msgctxt "field:whoosh.field,stored:"
+msgid "Stored"
+msgstr "Stored"
+
+msgctxt "field:whoosh.field,unique:"
+msgid "Unique"
+msgstr "Únic"
+
+msgctxt "field:whoosh.field,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:whoosh.field,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:whoosh.schema,active:"
+msgid "Active"
+msgstr "Actiu"
+
+msgctxt "field:whoosh.schema,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:whoosh.schema,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:whoosh.schema,debug:"
+msgid "Debug"
+msgstr "Debug"
+
+msgctxt "field:whoosh.schema,domain:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "field:whoosh.schema,fields_:"
+msgid "Fields"
+msgstr "Camps"
+
+msgctxt "field:whoosh.schema,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:whoosh.schema,langs:"
+msgid "Langs"
+msgstr "Idiomes"
+
+msgctxt "field:whoosh.schema,model:"
+msgid "Model"
+msgstr "Model"
+
+msgctxt "field:whoosh.schema,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.schema,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.schema,schema_groups:"
+msgid "Groups"
+msgstr "Grups"
+
+msgctxt "field:whoosh.schema,slug:"
+msgid "Slug"
+msgstr "Slug"
+
+msgctxt "field:whoosh.schema,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:whoosh.schema,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:whoosh.schema-res.group,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:whoosh.schema-res.group,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:whoosh.schema-res.group,group:"
+msgid "Group"
+msgstr "Grup"
+
+msgctxt "field:whoosh.schema-res.group,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:whoosh.schema-res.group,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.schema-res.group,schema:"
+msgid "Schema"
+msgstr "Esquema"
+
+msgctxt "field:whoosh.schema-res.group,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:whoosh.schema-res.group,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:whoosh.schema-whoosh.lang,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:whoosh.schema-whoosh.lang,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:whoosh.schema-whoosh.lang,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:whoosh.schema-whoosh.lang,lang:"
+msgid "Language"
+msgstr "Idioma"
+
+msgctxt "field:whoosh.schema-whoosh.lang,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:whoosh.schema-whoosh.lang,schema:"
+msgid "Schema"
+msgstr "Esquema"
+
+msgctxt "field:whoosh.schema-whoosh.lang,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:whoosh.schema-whoosh.lang,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:whoosh.schema.start,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:whoosh.schema.start,q:"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "field:whoosh.schema.start,schema:"
+msgid "Schema"
+msgstr "Esquema"
+
+msgctxt "help:whoosh.field,name:"
+msgid "Field name in Whoosh (\"name\", \"content\", \"slug\"..."
+msgstr "Camp en Whoosh (\"name\", \"content\", \"slug\"...)"
+
+msgctxt "help:whoosh.field,parser:"
+msgid "Use field to Multifield Parser."
+msgstr "Utilitza el camp per Multifield Parser."
+
+msgctxt "help:whoosh.schema,schema_groups:"
+msgid "User groups that will be able to use this schema."
+msgstr "Accés grups usuari en aquest esquema ."
+
+msgctxt "help:whoosh.schema,slug:"
+msgid "Schema directory name: az09"
+msgstr "Nom del directori del esquema: az09"
+
+msgctxt "help:whoosh.schema.start,q:"
+msgid "Concanate words with \"+\" to AND or \"-\" to NOT"
+msgstr "Uneix paraules utilitzant \"+\" per AND o bé \"-\" per NOT"
+
+msgctxt "model:ir.action,name:act_whoosh_field_form"
+msgid "Whoosh Field"
+msgstr "Camp Woosh"
+
+msgctxt "model:ir.action,name:act_whoosh_fields"
+msgid "Fields"
+msgstr "Camps"
+
+msgctxt "model:ir.action,name:act_whoosh_schema_form"
+msgid "Whoosh Schema"
+msgstr "Whoosh Esquema"
+
+msgctxt "model:ir.action,name:act_whoosh_search"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "model:ir.ui.menu,name:main_whoosh_menu"
+msgid "Whoosh"
+msgstr "Whoosh"
+
+msgctxt "model:ir.ui.menu,name:menu_act_whoosh_search"
+msgid "Search"
+msgstr "Cerca"
+
+msgctxt "model:ir.ui.menu,name:menu_configuration"
+msgid "Configuration"
+msgstr "Configuració"
+
+msgctxt "model:ir.ui.menu,name:menu_whoosh_schema"
+msgid "Schema"
+msgstr "Esquema"
+
+msgctxt "model:whoosh.field,name:"
+msgid "Whoosh Field"
+msgstr "Camp Woosh"
+
+msgctxt "model:whoosh.schema,name:"
+msgid "Whoosh Schema"
+msgstr "Whoosh Esquema"
+
+msgctxt "model:whoosh.schema-res.group,name:"
+msgid "Whoosh Schema - Group"
+msgstr "Whoosh Esquema - Grup"
+
+msgctxt "model:whoosh.schema-whoosh.lang,name:"
+msgid "Whoosh Schema - Whoosh Lang"
+msgstr "Whoosh Esquema - Whoosh Idioma"
+
+msgctxt "model:whoosh.schema.start,name:"
+msgid "Whoosh Schema Start"
+msgstr "Inici Whoosh Esquema"
+
+msgctxt "view:whoosh.field:"
+msgid "Whoosh Field"
+msgstr "Camp Woosh"
+
+msgctxt "view:whoosh.schema.start:"
+msgid "Searching"
+msgstr "Cerca"
+
+msgctxt "view:whoosh.schema:"
+msgid "Create Schema"
+msgstr "Crea esquema"
+
+msgctxt "view:whoosh.schema:"
+msgid "Domain"
+msgstr "Domini"
+
+msgctxt "view:whoosh.schema:"
+msgid "Fields"
+msgstr "Camps"
+
+msgctxt "view:whoosh.schema:"
+msgid "Generate Index"
+msgstr "Genera indexació"
+
+msgctxt "view:whoosh.schema:"
+msgid "Grups"
+msgstr "Grups"
+
+msgctxt "view:whoosh.schema:"
+msgid "Langs"
+msgstr "Idiomes"
+
+msgctxt "view:whoosh.schema:"
+msgid "Remove Schema"
+msgstr "Elimina esquema"
+
+msgctxt "view:whoosh.schema:"
+msgid "Whoosh Schema"
+msgstr "Whoosh Esquema"
+
+msgctxt "wizard_button:whoosh.search,start,end:"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgctxt "wizard_button:whoosh.search,start,open_:"
+msgid "Search"
+msgstr "Cerca"

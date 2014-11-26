@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!-- This file is part whooshsearch module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.icon" id="whoosh_icon">
+            <field name="name">tryton-whoosh</field>
+            <field name="path">icons/tryton-whoosh.svg</field>
+        </record>
+        <menuitem name="Whoosh" id="main_whoosh_menu" icon="tryton-whoosh"/>
+
+        <menuitem name="Configuration" parent="main_whoosh_menu"
+            id="menu_configuration" sequence="0" icon="tryton-preferences"/>
+        <record model="ir.ui.menu-res.group" id="menu_configuration_group_admin">
+            <field name="menu" ref="menu_configuration"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+
+        <!-- Whoosh Schema -->
+        <record model="ir.ui.view" id="whoosh_schema_view_form">
+            <field name="model">whoosh.schema</field>
+            <field name="type">form</field>
+            <field name="name">whoosh_schema_form</field>
+        </record>
+        <record model="ir.ui.view" id="whoosh_schema_view_tree">
+            <field name="model">whoosh.schema</field>
+            <field name="type">tree</field>
+            <field name="name">whoosh_schema_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_whoosh_schema_form">
+            <field name="name">Whoosh Schema</field>
+            <field name="res_model">whoosh.schema</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_whoosh_schema_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="whoosh_schema_view_tree"/>
+            <field name="act_window" ref="act_whoosh_schema_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_whoosh_schema_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="whoosh_schema_view_form"/>
+            <field name="act_window" ref="act_whoosh_schema_form"/>
+        </record>
+        <menuitem id="menu_whoosh_schema" name="Schema" action="act_whoosh_schema_form" parent="menu_configuration"/>
+
+        <!-- Whoosh Field -->
+        <record model="ir.ui.view" id="whoosh_field_view_form">
+            <field name="model">whoosh.field</field>
+            <field name="type">form</field>
+            <field name="name">whoosh_field_form</field>
+        </record>
+        <record model="ir.ui.view" id="whoosh_field_view_tree">
+            <field name="model">whoosh.field</field>
+            <field name="type">tree</field>
+            <field name="name">whoosh_field_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_whoosh_field_form">
+            <field name="name">Whoosh Field</field>
+            <field name="res_model">whoosh.field</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_whoosh_field_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="whoosh_field_view_tree"/>
+            <field name="act_window" ref="act_whoosh_field_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_whoosh_field_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="whoosh_field_view_form"/>
+            <field name="act_window" ref="act_whoosh_field_form"/>
+        </record>
+
+        <!-- Keywords -->
+        <record model="ir.action.act_window" id="act_whoosh_fields">
+            <field name="name">Fields</field>
+            <field name="res_model">whoosh.field</field>
+            <field name="domain">[('schema', 'in', Eval('active_ids'))]</field>
+        </record>
+        <record model="ir.action.keyword" id="act_open_whoosh_fields_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">whoosh.schema,-1</field>
+            <field name="action" ref="act_whoosh_fields"/>
+        </record>
+
+        <!-- Searching wizard -->
+        <record model="ir.ui.view" id="whoosh_schema_start_view_form">
+            <field name="model">whoosh.schema.start</field>
+            <field name="type">form</field>
+            <field name="name">schema_start_form</field>
+        </record>
+
+        <record model="ir.action.wizard" id="act_whoosh_search">
+            <field name="name">Search</field>
+            <field name="wiz_name">whoosh.search</field>
+        </record>
+        <menuitem id="menu_act_whoosh_search"
+            parent="main_whoosh_menu" action="act_whoosh_search"/>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_whoosh_schema">
+            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_whoosh_schema_admin">
+            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="group" ref="res.group_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_whoosh_field">
+            <field name="model" search="[('model', '=', 'whoosh.field')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_whoosh_field_admin">
+            <field name="model" search="[('model', '=', 'whoosh.field')]"/>
+            <field name="group" ref="res.group_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+    </data>
+</tryton>

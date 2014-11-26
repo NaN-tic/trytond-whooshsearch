@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- This file is part whooshsearch module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tree string="Whoosh Schema">
+    <field name="name"/>
+    <field name="slug"/>
+    <field name="model"/>
+    <field name="debug"/>
+    <field name="active" tree_invisible="1"/>
+</tree>

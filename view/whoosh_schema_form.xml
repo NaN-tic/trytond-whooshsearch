@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- This file is part whooshsearch module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Whoosh Schema" col="6">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="slug"/>
+    <field name="slug"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="debug"/>
+    <field name="debug"/>
+    <notebook colspan="6">
+        <page id="fields" string="Fields">
+            <label name="model"/>
+            <field name="model"/>
+            <newline/>
+            <field name="fields_" colspan="6"/>
+        </page>
+        <page id="langs" string="Langs">
+            <field name="langs" colspan="6"/>
+        </page>
+        <page id="grups" string="Grups">
+            <field name="schema_groups" colspan="6"/>
+        </page>
+        <page id="domain" string="Domain">
+            <label name="domain"/>
+            <field name="domain"/>
+        </page>
+    </notebook>
+    <group col="6" colspan="6" id="buttons">
+        <button icon="tryton-ok" name="create_schema" string="Create Schema"/>
+        <button icon="tryton-cancel" name="remove_schema" string="Remove Schema"/>
+        <button icon="tryton-go-next" name="generate_index" string="Generate Index"/>
+    </group>
+</form>

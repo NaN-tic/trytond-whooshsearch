@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part whooshsearch module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<form string="Whoosh Field">
+    <label name="field"/>
+    <field name="field"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="stored"/>
+    <field name="stored"/>
+    <label name="unique"/>
+    <field name="unique"/>
+    <label name="parser"/>
+    <field name="parser"/>
+    <label name="schema"/>
+    <field name="schema"/>
+</form>
