@@ -18,6 +18,7 @@ import logging
 __all__ = ['WhooshSchema', 'WhooshField', 'WhooshWhooshLang', 'WhooshSchemaGroup',
     'WhooshSchemaStart', 'WhooshSearch']
 
+logger = logging.getLogger(__name__)
 EXCLUDE_FIELDS = ['property', 'sha', 'binary', 'one2many', 'one2one',
     'timestamp', 'time', 'reference']
 FIELD2WHOOSH = {
@@ -95,10 +96,10 @@ class WhooshSchema(ModelSQL, ModelView):
                 db_name, 'whoosh', schema.slug)
             try:
                 shutil.rmtree(schema_dir)
-                logging.getLogger('whoosh').info(
+                logger.info(
                     'Remove schema directory "%s"' % schema.slug)
             except:
-                logging.getLogger('whoosh').info(
+                logger.info(
                     'Not remove schema directory "%s"' % schema.slug)
 
     @classmethod
@@ -144,12 +145,12 @@ class WhooshSchema(ModelSQL, ModelView):
                     sc[f.name] = field_type(**options)
 
                 if schema.debug:
-                    logging.getLogger('whoosh').info(sc)
+                    logger.info(sc)
 
                 schema_obj = Schema(**sc)
                 index.create_in(schema_lang_dir, schema_obj)
 
-            logging.getLogger('whoosh').info(
+            logger.info(
                 'Created/Updated %s Schemas' % schema.slug)
 
     @classmethod
@@ -163,14 +164,14 @@ class WhooshSchema(ModelSQL, ModelView):
     def generate_index(cls, schemas):
         '''Generate indexing data each schema'''
         for schema in schemas:
-            logging.getLogger('whoosh').info('Start schema %s' % schema.slug)
+            logger.info('Start schema %s' % schema.slug)
 
             db_name = Transaction().cursor.dbname
             schema_dir = os.path.join(config.get('database', 'path'),
                 db_name, 'whoosh', schema.slug)
 
             if not os.path.exists(schema_dir):
-                logging.getLogger('whoosh').error(
+                logger.error(
                     'Schema directory "%s" not exist' % schema.slug)
                 continue
 
@@ -181,12 +182,12 @@ class WhooshSchema(ModelSQL, ModelView):
             for lang in langs:
                 schema_lang_dir = os.path.join(schema_dir, lang)
                 if not os.path.exists(schema_lang_dir):
-                    logging.getLogger('whoosh').error(
+                    logger.error(
                         'Schema lang directory "%s" not exist' % lang)
                     continue
 
                 if schema.debug:
-                    logging.getLogger('whoosh').info(schema_lang_dir)
+                    logger.info(schema_lang_dir)
 
                 ix = index.open_dir(schema_lang_dir)
                 writer = ix.writer()
@@ -209,15 +210,15 @@ class WhooshSchema(ModelSQL, ModelView):
                         data[f.name] = u'%s' % value
 
                     if schema.debug:
-                        logging.getLogger('whoosh').info('%s' % data)
+                        logger.info('%s' % data)
 
                     writer.update_document(**data)
 
                 writer.commit()
-                logging.getLogger('whoosh').info(
+                logger.info(
                     'Total Schema "%s" - "%s": %s' % (schema.slug, lang, ix.doc_count()))
 
-            logging.getLogger('whoosh').info('End indexing schema "%s"' % schema.slug)
+            logger.info('End indexing schema "%s"' % schema.slug)
 
     @classmethod
     def copy(cls, schemas, default=None):
