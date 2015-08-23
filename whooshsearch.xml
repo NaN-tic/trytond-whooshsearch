@@ -75,7 +75,9 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.action.act_window" id="act_whoosh_fields">
             <field name="name">Fields</field>
             <field name="res_model">whoosh.field</field>
-            <field name="domain">[('schema', 'in', Eval('active_ids'))]</field>
+            <field name="domain"
+                eval="[('schema', 'in', Eval('active_ids'))]"
+                pyson="1"/>
         </record>
         <record model="ir.action.keyword" id="act_open_whoosh_fields_keyword1">
             <field name="keyword">form_relate</field>
