@@ -260,13 +260,9 @@ class WhooshField(ModelSQL, ModelView):
 
     @fields.depends('field', 'name')
     def on_change_field(self):
-        changes = {}
-
-        if self.name:
-            return changes
+        self.name = None
         if self.field:
-            changes['name'] = self.field.name
-        return changes
+            self.name = self.field.name
 
 
 class EmptyStateAction(StateAction):
