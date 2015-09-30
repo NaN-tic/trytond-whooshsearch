@@ -4,7 +4,7 @@
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval, PYSONEncoder, Id
 from trytond.config import config
 from whoosh import index
@@ -63,9 +63,10 @@ class WhooshSchema(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(WhooshSchema, cls).__setup__()
+        t = cls.__table__()
         cls._sql_constraints = [
-            ('slug_uniq', 'UNIQUE(slug)',
-             'The slug of the whoosh schema must be unique.')
+            ('slug_uniq', Unique(t, t.slug),
+                'The slug of the whoosh schema must be unique.')
             ]
         cls._buttons.update({
             'create_schema': {},
