@@ -1,25 +1,14 @@
-#!/usr/bin/env python
-# This file is part whoosh module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains
-# the full copyright notices and license terms.
+# This file is part of the whoosh module for Tryton.
+# The COPYRIGHT file at the top level of this repository contains the full
+# copyright notices and license terms.
 import unittest
 import trytond.tests.test_tryton
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import ModuleTestCase
 
 
-class WhooshTestCase(unittest.TestCase):
-    'Whoosh module'
-
-    def setUp(self):
-        trytond.tests.test_tryton.install_module('whoosh')
-
-    def test0005views(self):
-        'Test views'
-        test_view('whoosh')
-
-    def test0006depends(self):
-        'Test depends'
-        test_depends()
+class WhooshTestCase(ModuleTestCase):
+    'Test Whoosh module'
+    module = 'whoosh'
 
 
 def suite():
