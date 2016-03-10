@@ -92,7 +92,7 @@ class WhooshSchema(ModelSQL, ModelView):
     @staticmethod
     def _remove_schema(schemas):
         for schema in schemas:
-            db_name = Transaction().cursor.dbname
+            db_name = Transaction().database.name
             schema_dir = os.path.join(config.get('database', 'path'),
                 db_name, 'whoosh', schema.slug)
             try:
@@ -112,7 +112,7 @@ class WhooshSchema(ModelSQL, ModelView):
         DATABASEPATH/whoosh/SCHEMA-SLUG/LANG-CODE.lower()
         '''
         for schema in schemas:
-            db_name = Transaction().cursor.dbname
+            db_name = Transaction().database.name
             schema_dir = os.path.join(config.get('database', 'path'),
                 db_name, 'whoosh', schema.slug)
 
@@ -167,7 +167,7 @@ class WhooshSchema(ModelSQL, ModelView):
         for schema in schemas:
             logger.info('Start schema %s' % schema.slug)
 
-            db_name = Transaction().cursor.dbname
+            db_name = Transaction().database.name
             schema_dir = os.path.join(config.get('database', 'path'),
                 db_name, 'whoosh', schema.slug)
 
@@ -314,7 +314,7 @@ class WhooshSearch(Wizard):
         schema = self.start.schema
         q = self.start.q
 
-        db_name = Transaction().cursor.dbname
+        db_name = Transaction().database.name
         lang = Transaction().context.get('language').lower()
 
         schema_dir = os.path.join(config.get('database', 'path'),
