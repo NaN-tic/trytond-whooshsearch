@@ -46,6 +46,10 @@ msgctxt "field:whoosh.field,id:"
 msgid "ID"
 msgstr "ID"
 
+msgctxt "field:whoosh.field,ignore_accents:"
+msgid "Ignore Accents"
+msgstr "Ignorar accents"
+
 msgctxt "field:whoosh.field,name:"
 msgid "Name"
 msgstr "Nom"
@@ -61,6 +65,10 @@ msgstr "Nom"
 msgctxt "field:whoosh.field,schema:"
 msgid "Schema"
 msgstr "Esquema"
+
+msgctxt "field:whoosh.field,stemming:"
+msgid "Stemming"
+msgstr "Lexema"
 
 msgctxt "field:whoosh.field,stored:"
 msgid "Stored"
