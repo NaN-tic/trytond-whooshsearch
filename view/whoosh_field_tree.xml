@@ -6,6 +6,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <field name="field"/>
     <field name="stored"/>
     <field name="unique"/>
+    <field name="stemming"/>
+    <field name="ignore_accents"/>
     <field name="parser"/>
     <field name="active" tree_invisible="1"/>
 </tree>

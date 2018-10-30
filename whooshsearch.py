@@ -11,6 +11,8 @@ from whoosh import index
 from whoosh.fields import Schema, ID as wID, BOOLEAN as wBOOLEAN, \
     NUMERIC as wNUMERIC, TEXT as wTEXT, DATETIME as wDATETIME
 from whoosh.qparser import MultifieldParser
+from whoosh.analysis import CharsetFilter, StemmingAnalyzer
+from whoosh.support.charset import accent_map
 import os
 import shutil
 import logging
@@ -136,11 +138,18 @@ class WhooshSchema(ModelSQL, ModelView):
                     if field.ttype in EXCLUDE_FIELDS:
                         continue
 
-                    options = {}
+                    options = {'analyzer': None}
                     if f.stored:
                         options['stored'] = True
                     if f.unique:
                         options['unique'] = True
+                    if f.stemming:
+                        options['analyzer'] = StemmingAnalyzer()
+                    if f.ignore_accents:
+                        if options['analyzer']:
+                            options['analyzer'] |= CharsetFilter(accent_map)
+                        else:
+                            options['analyzer'] = CharsetFilter(accent_map)
 
                     field_type = FIELD2WHOOSH.get(field.ttype)
                     sc[f.name] = field_type(**options)
@@ -247,6 +256,8 @@ class WhooshField(ModelSQL, ModelView):
         domain=[('model', '=', Eval('_parent_schema', {}).get('model'))])
     stored = fields.Boolean('Stored')
     unique = fields.Boolean('Unique')
+    stemming = fields.Boolean('Stemming')
+    ignore_accents = fields.Boolean('Ignore Accents')
     parser = fields.Boolean('Parser',
         help='Use field to Multifield Parser.')
     active = fields.Boolean('Active', select=True)

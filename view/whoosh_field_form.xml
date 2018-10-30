@@ -12,6 +12,10 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <field name="stored"/>
     <label name="unique"/>
     <field name="unique"/>
+    <label name="stemming"/>
+    <field name="stemming"/>
+    <label name="ignore_accents"/>
+    <field name="ignore_accents"/>
     <label name="parser"/>
     <field name="parser"/>
     <label name="schema"/>
