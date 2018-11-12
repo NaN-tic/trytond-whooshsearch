@@ -363,6 +363,8 @@ class WhooshSearch(Wizard):
             'model': model_model,
             'res_model': model_model,
             'type': 'ir.action.act_window',
+            'context_model': None,
+            'context_domain': None,
             'pyson_domain': domain,
             'pyson_context': context,
             'pyson_order': '[]',
