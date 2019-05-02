@@ -16,6 +16,8 @@ from whoosh.support.charset import accent_map
 import os
 import shutil
 import logging
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
 
 __all__ = ['WhooshSchema', 'WhooshField', 'WhooshWhooshLang', 'WhooshSchemaGroup',
     'WhooshSchemaStart', 'WhooshSearch']
@@ -310,17 +312,6 @@ class WhooshSearch(Wizard):
             ])
     open_ = EmptyStateAction()
 
-    @classmethod
-    def __setup__(cls):
-        super(WhooshSearch, cls).__setup__()
-        cls._error_messages.update({
-                'error_domain': ('Error domain "%s".'),
-                'not_schema_dir': ('Not found schema "%s" - "%s". '
-                    'Create Schema and generate index before searching.'),
-                'not_fields': ('Not found parse fields in schema "%s". '
-                    'Select one or more parser fields in schema.'),
-                })
-
     def do_open_(self, action):
         schema = self.start.schema
         q = self.start.q
@@ -332,14 +323,16 @@ class WhooshSearch(Wizard):
             db_name, 'whoosh', schema.slug, lang)
 
         if not os.path.exists(schema_dir):
-            self.raise_user_error('not_schema_dir', (schema.slug, lang))
+            raise UserError(gettext('whooshsearch.not_schema_dir',
+                slug=schema.slug, lang=lang))
 
         fields = []
         for field in schema.fields_:
             if field.parser:
                 fields.append(field.name)
         if not fields:
-            self.raise_user_error('not_fields', (schema.slug))
+            raise UserError(gettext('whooshsearch.not_fields',
+                slug=schema.slug))
 
         ix = index.open_dir(schema_dir)
 
