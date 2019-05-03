@@ -323,7 +323,7 @@ class WhooshSearch(Wizard):
             db_name, 'whoosh', schema.slug, lang)
 
         if not os.path.exists(schema_dir):
-            raise UserError(gettext('whooshsearch.not_schema_dir',
+            raise UserError(gettext('whooshsearch.msg_not_schema_dir',
                 slug=schema.slug, lang=lang))
 
         fields = []
@@ -331,7 +331,7 @@ class WhooshSearch(Wizard):
             if field.parser:
                 fields.append(field.name)
         if not fields:
-            raise UserError(gettext('whooshsearch.not_fields',
+            raise UserError(gettext('whooshsearch.msg_not_fields',
                 slug=schema.slug))
 
         ix = index.open_dir(schema_dir)

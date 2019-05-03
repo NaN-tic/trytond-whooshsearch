@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data group="1">
+        <record model="ir.message" id="msg_not_fields">
+            <field name="text">Not found parse fields in schema "%(slug)s". Select one or more parser fields in schema.</field>
+        </record>
+        <record model="ir.message" id="msg_not_schema_dir">
+            <field name="text">Not found schema "%(slug)s" - "%(lang)s". Create Schema and generate index before searching.</field>
+        </record>
+    </data>
+</tryton>
