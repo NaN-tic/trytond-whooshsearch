@@ -10,7 +10,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <menuitem name="Whoosh" id="main_whoosh_menu" icon="tryton-whoosh"/>
 
         <menuitem name="Configuration" parent="main_whoosh_menu"
-            id="menu_configuration" sequence="0" icon="tryton-preferences"/>
+            id="menu_configuration" sequence="0" icon="tryton-list"/>
         <record model="ir.ui.menu-res.group" id="menu_configuration_group_admin">
             <field name="menu" ref="menu_configuration"/>
             <field name="group" ref="res.group_admin"/>
