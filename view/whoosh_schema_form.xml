@@ -31,6 +31,6 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <group col="6" colspan="6" id="buttons">
         <button icon="tryton-ok" name="create_schema" string="Create Schema"/>
         <button icon="tryton-cancel" name="remove_schema" string="Remove Schema"/>
-        <button icon="tryton-go-next" name="generate_index" string="Generate Index"/>
+        <button icon="tryton-forward" name="generate_index" string="Generate Index"/>
     </group>
 </form>
