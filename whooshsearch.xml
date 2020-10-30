@@ -44,6 +44,34 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
         <menuitem id="menu_whoosh_schema" name="Schema" action="act_whoosh_schema_form" parent="menu_configuration"/>
 
+        <record model="ir.model.button" id="create_schema_button">
+            <field name="name">create_schema</field>
+            <field name="string">Create Schema</field>
+            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="create_schema_button_group_admin">
+            <field name="button" ref="create_schema_button"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+        <record model="ir.model.button" id="remove_schema_button">
+            <field name="name">remove_schema</field>
+            <field name="string">Remove Schema</field>
+            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="remove_schema_button_group_admin">
+            <field name="button" ref="remove_schema_button"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+        <record model="ir.model.button" id="generate_index_button">
+            <field name="name">generate_index</field>
+            <field name="string">Generate Index</field>
+            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="generate_index_button_group_admin">
+            <field name="button" ref="generate_index_button"/>
+            <field name="group" ref="res.group_admin"/>
+        </record>
+
         <!-- Whoosh Field -->
         <record model="ir.ui.view" id="whoosh_field_view_form">
             <field name="model">whoosh.field</field>
