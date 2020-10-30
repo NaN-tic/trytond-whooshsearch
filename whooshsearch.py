@@ -5,7 +5,7 @@ from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
 from trytond.model import ModelView, ModelSQL, fields, Unique
-from trytond.pyson import Eval, PYSONEncoder, Id
+from trytond.pyson import Eval, PYSONEncoder
 from trytond.config import config
 from whoosh import index
 from whoosh.fields import Schema, ID as wID, BOOLEAN as wBOOLEAN, \
@@ -58,10 +58,6 @@ class WhooshSchema(ModelSQL, ModelView):
     debug = fields.Boolean('Debug')
     schema_groups = fields.Many2Many('whoosh.schema-res.group', 'schema',
         'group', 'Groups',
-        states={
-            'invisible': ~Eval('groups', []).contains(Id('res', 'group_admin')
-                ),
-            },
         help='User groups that will be able to use this schema.')
 
     @classmethod
