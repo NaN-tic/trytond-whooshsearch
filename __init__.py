@@ -2,16 +2,16 @@
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
 from trytond.pool import Pool
-from .whooshsearch import *
+from . import whooshsearch
 
 def register():
     Pool.register(
-        WhooshSchema,
-        WhooshField,
-        WhooshWhooshLang,
-        WhooshSchemaGroup,
-        WhooshSchemaStart,
+        whooshsearch.WhooshSchema,
+        whooshsearch.WhooshField,
+        whooshsearch.WhooshWhooshLang,
+        whooshsearch.WhooshSchemaGroup,
+        whooshsearch.WhooshSchemaStart,
         module='whooshsearch', type_='model')
     Pool.register(
-        WhooshSearch,
+        whooshsearch.WhooshSearch,
         module='whooshsearch', type_='wizard')
