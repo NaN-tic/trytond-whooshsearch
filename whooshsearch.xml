@@ -7,7 +7,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="name">tryton-whoosh</field>
             <field name="path">icons/tryton-whoosh.svg</field>
         </record>
-        <menuitem name="Whoosh" id="main_whoosh_menu" icon="tryton-whoosh"/>
+        <menuitem name="Whoosh" id="main_whoosh_menu" icon="tryton-whoosh" sequence="100"/>
 
         <menuitem name="Configuration" parent="main_whoosh_menu"
             id="menu_configuration" sequence="0" icon="tryton-list"/>
