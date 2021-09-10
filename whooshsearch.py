@@ -4,7 +4,7 @@
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
-from trytond.model import ModelView, ModelSQL, fields, Unique
+from trytond.model import ModelView, ModelSQL, DeactivableMixin, fields, Unique
 from trytond.pyson import Eval, PYSONEncoder
 from trytond.config import config
 from whoosh import index
@@ -42,7 +42,7 @@ FIELD2WHOOSH = {
     }
 
 
-class WhooshSchema(ModelSQL, ModelView):
+class WhooshSchema(DeactivableMixin, ModelSQL, ModelView):
     'Whoosh Schema'
     __name__ = 'whoosh.schema'
     name = fields.Char('Name', required=True, translate=True)
@@ -54,7 +54,6 @@ class WhooshSchema(ModelSQL, ModelView):
     langs = fields.Many2Many('whoosh.schema-whoosh.lang',
         'schema', 'lang', 'Langs',
         domain=[('translatable', '=', True)])
-    active = fields.Boolean('Active', select=True)
     debug = fields.Boolean('Debug')
     schema_groups = fields.Many2Many('whoosh.schema-res.group', 'schema',
         'group', 'Groups',
@@ -73,10 +72,6 @@ class WhooshSchema(ModelSQL, ModelView):
             'remove_schema': {},
             'generate_index': {},
             })
-
-    @staticmethod
-    def default_active():
-        return True
 
     @staticmethod
     def default_langs():
