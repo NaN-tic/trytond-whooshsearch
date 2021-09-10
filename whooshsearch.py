@@ -238,7 +238,7 @@ class WhooshSchema(DeactivableMixin, ModelSQL, ModelView):
         super(WhooshSchema, cls).delete(schemas)
 
 
-class WhooshField(ModelSQL, ModelView):
+class WhooshField(DeactivableMixin, ModelSQL, ModelView):
     'Whoosh Field'
     __name__ = 'whoosh.field'
     schema = fields.Many2One('whoosh.schema', 'Schema', required=True,
@@ -253,14 +253,9 @@ class WhooshField(ModelSQL, ModelView):
     ignore_accents = fields.Boolean('Ignore Accents')
     parser = fields.Boolean('Parser',
         help='Use field to Multifield Parser.')
-    active = fields.Boolean('Active', select=True)
 
     @staticmethod
     def default_stored():
-        return True
-
-    @staticmethod
-    def default_active():
         return True
 
     @fields.depends('field', 'name')
