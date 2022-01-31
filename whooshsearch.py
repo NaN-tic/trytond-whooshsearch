@@ -246,7 +246,8 @@ class WhooshField(DeactivableMixin, ModelSQL, ModelView):
     name = fields.Char('Name', required=True,
         help='Field name in Whoosh ("name", "content", "slug"...')
     field = fields.Many2One('ir.model.field', 'Field', required=True,
-        domain=[('model', '=', Eval('_parent_schema', {}).get('model'))])
+        domain=[('model', '=', Eval('_parent_schema', {}).get('model'))],
+        depends=['schema'])
     stored = fields.Boolean('Stored')
     unique = fields.Boolean('Unique')
     stemming = fields.Boolean('Stemming')
