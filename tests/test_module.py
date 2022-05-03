@@ -6,7 +6,7 @@ from trytond.modules.company.tests import CompanyTestMixin
 from trytond.tests.test_tryton import ModuleTestCase
 
 
-class WhooshsearchTestCase(CompanyTestMixin, ModuleTestCase):
+class WhooshsearchTestCase(ModuleTestCase):
     'Test Whooshsearch module'
     module = 'whooshsearch'
 
