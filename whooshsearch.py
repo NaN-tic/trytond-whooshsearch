@@ -358,9 +358,9 @@ class WhooshWhooshLang(ModelSQL):
     __name__ = 'whoosh.schema-whoosh.lang'
     _table = 'whoosh_schema_lang_rel'
     schema = fields.Many2One('whoosh.schema', 'Schema', ondelete='CASCADE',
-        required=True, select=True)
+        required=True)
     lang = fields.Many2One('ir.lang', 'Language',
-        ondelete='CASCADE', required=True, select=True)
+        ondelete='CASCADE', required=True)
 
 
 class WhooshSchemaGroup(ModelSQL):
