@@ -47,7 +47,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.model.button" id="create_schema_button">
             <field name="name">create_schema</field>
             <field name="string">Create Schema</field>
-            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="model">whoosh.schema</field>
         </record>
         <record model="ir.model.button-res.group" id="create_schema_button_group_admin">
             <field name="button" ref="create_schema_button"/>
@@ -56,7 +56,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.model.button" id="remove_schema_button">
             <field name="name">remove_schema</field>
             <field name="string">Remove Schema</field>
-            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="model">whoosh.schema</field>
         </record>
         <record model="ir.model.button-res.group" id="remove_schema_button_group_admin">
             <field name="button" ref="remove_schema_button"/>
@@ -65,7 +65,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.model.button" id="generate_index_button">
             <field name="name">generate_index</field>
             <field name="string">Generate Index</field>
-            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="model">whoosh.schema</field>
         </record>
         <record model="ir.model.button-res.group" id="generate_index_button_group_admin">
             <field name="button" ref="generate_index_button"/>
@@ -129,14 +129,14 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 
         <!-- Access -->
         <record model="ir.model.access" id="access_whoosh_schema">
-            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="model">whoosh.schema</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_whoosh_schema_admin">
-            <field name="model" search="[('model', '=', 'whoosh.schema')]"/>
+            <field name="model">whoosh.schema</field>
             <field name="group" ref="res.group_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -145,14 +145,14 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         </record>
 
         <record model="ir.model.access" id="access_whoosh_field">
-            <field name="model" search="[('model', '=', 'whoosh.field')]"/>
+            <field name="model">whoosh.field</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_whoosh_field_admin">
-            <field name="model" search="[('model', '=', 'whoosh.field')]"/>
+            <field name="model">whoosh.field</field>
             <field name="group" ref="res.group_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
