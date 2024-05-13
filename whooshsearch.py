@@ -225,6 +225,9 @@ class WhooshSchema(DeactivableMixin, ModelSQL, ModelView):
 
     @classmethod
     def copy(cls, schemas, default=None):
+        if default is None:
+            default = {}
+        default = default.copy()
         new_schemas = []
         for schema in schemas:
             default['slug'] = '%s-copy' % schema.slug
