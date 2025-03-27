@@ -248,8 +248,11 @@ class WhooshField(DeactivableMixin, ModelSQL, ModelView):
         ondelete='CASCADE')
     name = fields.Char('Name', required=True,
         help='Field name in Whoosh ("name", "content", "slug"...')
-    field = fields.Many2One('ir.model.field', 'Field', required=True,
-        domain=[('model', '=', Eval('_parent_schema', {}).get('model'))])
+    field = fields.Many2One('ir.model.field', 'Field', ondelete='CASCADE',
+        required=True, domain=[
+            ('model_ref', '=',
+                Eval('_parent_schema', Eval('context', {})).get('model', -1))
+        ])
     stored = fields.Boolean('Stored')
     unique = fields.Boolean('Unique')
     stemming = fields.Boolean('Stemming')
