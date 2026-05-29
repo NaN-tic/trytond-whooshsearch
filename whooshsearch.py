@@ -1,6 +1,7 @@
 # This file is part whooshsearch module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
+from ast import literal_eval
 from trytond.transaction import Transaction
 from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
@@ -198,7 +199,8 @@ class WhooshSchema(DeactivableMixin, ModelSQL, ModelView):
                 Model = Pool().get(schema.model.model)
                 with Transaction().set_context(language=lang):
                     records = Model.search(
-                        domain=eval(schema.domain) if schema.domain else [],
+                        domain=literal_eval(schema.domain)
+                        if schema.domain else [],
                         )
 
                 for record in records:
