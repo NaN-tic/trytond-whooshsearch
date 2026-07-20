@@ -6,7 +6,7 @@ from trytond.pool import Pool
 from trytond.wizard import Wizard, StateView, StateAction, Button
 from trytond.model import ModelView, ModelSQL, DeactivableMixin, fields, Unique
 from trytond.pyson import Eval, PYSONEncoder
-from trytond.config import config
+import trytond.config as config
 from whoosh import index
 from whoosh.fields import Schema, ID as wID, BOOLEAN as wBOOLEAN, \
     NUMERIC as wNUMERIC, TEXT as wTEXT, DATETIME as wDATETIME
