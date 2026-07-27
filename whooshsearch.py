@@ -195,7 +195,7 @@ class WhooshSchema(DeactivableMixin, ModelSQL, ModelView):
                 ix = index.open_dir(schema_lang_dir)
                 writer = ix.writer()
 
-                Model = Pool().get(schema.model.model)
+                Model = Pool().get(schema.model.name)
                 with Transaction().set_context(language=lang):
                     records = Model.search(
                         domain=eval(schema.domain) if schema.domain else [],
@@ -336,7 +336,7 @@ class WhooshSearch(Wizard):
             res = [result.get('id') for result in results]
 
         model = schema.model
-        model_model = model.model
+        model_model = model.name
 
         domain = [('id', 'in', res)]
 
