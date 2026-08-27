@@ -11,14 +11,15 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64px"
-   height="64px"
+   width="24"
+   height="24"
    id="svg3471"
    sodipodi:version="0.32"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="tryton-searching.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   version="1.1">
+   version="1.1" viewBox="0 0 24 24">
+  <g data-icon-normalized="1" transform="scale(0.375)">
   <defs
      id="defs3473">
     <linearGradient
@@ -829,5 +830,7 @@
          d="m 16.849661,46.487458 c 0,0 -5.428038,1.375496 -7.179279,3.883448 -1.0763589,1.541454 -0.6666312,3.068619 -3.9790909,7.953055 5.2084199,-3.065851 6.3035939,-2.634253 8.1380009,-4.544987 2.374402,-2.468323 3.020369,-7.291516 3.020369,-7.291516 z"
          style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
     </g>
+  </g>
+
   </g>
 </svg>
