@@ -10,11 +10,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <menuitem name="Whoosh" id="main_whoosh_menu" icon="tryton-whoosh" sequence="100"/>
 
         <menuitem name="Configuration" parent="main_whoosh_menu"
-            id="menu_configuration" sequence="0" icon="tryton-list"/>
-        <record model="ir.ui.menu-res.group" id="menu_configuration_group_admin">
-            <field name="menu" ref="menu_configuration"/>
-            <field name="group" ref="res.group_admin"/>
-        </record>
+            id="menu_configuration" sequence="0" icon="tryton-list" administration="True"/>
 
         <!-- Whoosh Schema -->
         <record model="ir.ui.view" id="whoosh_schema_view_form">
@@ -49,27 +45,15 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="string">Create Schema</field>
             <field name="model">whoosh.schema</field>
         </record>
-        <record model="ir.model.button-res.group" id="create_schema_button_group_admin">
-            <field name="button" ref="create_schema_button"/>
-            <field name="group" ref="res.group_admin"/>
-        </record>
         <record model="ir.model.button" id="remove_schema_button">
             <field name="name">remove_schema</field>
             <field name="string">Remove Schema</field>
             <field name="model">whoosh.schema</field>
         </record>
-        <record model="ir.model.button-res.group" id="remove_schema_button_group_admin">
-            <field name="button" ref="remove_schema_button"/>
-            <field name="group" ref="res.group_admin"/>
-        </record>
         <record model="ir.model.button" id="generate_index_button">
             <field name="name">generate_index</field>
             <field name="string">Generate Index</field>
             <field name="model">whoosh.schema</field>
-        </record>
-        <record model="ir.model.button-res.group" id="generate_index_button_group_admin">
-            <field name="button" ref="generate_index_button"/>
-            <field name="group" ref="res.group_admin"/>
         </record>
 
         <!-- Whoosh Field -->
@@ -135,14 +119,6 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
-        <record model="ir.model.access" id="access_whoosh_schema_admin">
-            <field name="model">whoosh.schema</field>
-            <field name="group" ref="res.group_admin"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
-        </record>
 
         <record model="ir.model.access" id="access_whoosh_field">
             <field name="model">whoosh.field</field>
@@ -150,14 +126,6 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
-        </record>
-        <record model="ir.model.access" id="access_whoosh_field_admin">
-            <field name="model">whoosh.field</field>
-            <field name="group" ref="res.group_admin"/>
-            <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="True"/>
-            <field name="perm_create" eval="True"/>
-            <field name="perm_delete" eval="True"/>
         </record>
     </data>
 </tryton>
