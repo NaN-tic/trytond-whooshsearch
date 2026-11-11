@@ -107,6 +107,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.action.wizard" id="act_whoosh_search">
             <field name="name">Search</field>
             <field name="wiz_name">whoosh.search</field>
+            <field name="model">ir.ui.menu</field>
         </record>
         <menuitem id="menu_act_whoosh_search"
             parent="main_whoosh_menu" action="act_whoosh_search"/>
